@@ -52,7 +52,7 @@ body {
 .logo_right img {
     height: 60px;
     width: auto;
-    padding: 0 100px 0 100px;
+    padding: 25px 145px 0 145px;
     object-fit: contain;
 }
 
@@ -72,9 +72,10 @@ body {
 .subtitle {
     font-family: 'coolvetica rg', sans-serif;
     font-size: 18px;
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto 30px;
     line-height: 1.5;
+    letter-spacing:3px;
 }
 
 .header_button {
@@ -93,7 +94,6 @@ body {
 
 .header_button:hover {
     transform: scale(1.05);
-    opacity: 0.9;
 }
 
 .button_container{
@@ -106,7 +106,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 60px;
+    padding: 30px 60px 70px 60px;
     font-size: 14px;
     line-height: 1.6;
 }
@@ -115,8 +115,9 @@ body {
 .info_right {
     font-family: 'coolvetica rg', sans-serif;
     font-size: 18px;
-    padding: 0 100px 0 100px;
+    padding: 0 130px 0 130px;
     margin-top: -50px;
+    line-height: 1.2;
 }
 
 .p_info_left,
@@ -126,70 +127,26 @@ body {
 
 .background_atom {
     position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-    height: 400px;
-    z-index: 0;
-    pointer-events: none;
-    /* Анимация вращения всего атома */
-    animation: atom-spin 20s linear infinite;
-}
-
-.orbit {
-    position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px solid rgba(242, 238, 255, 0.3);
-    border-radius: 50%;
     transform: translate(-50%, -50%);
-}
-
-.orbit-1 {
-    width: 300px;
-    height: 500px;
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.orbit-2 {
-    width: 300px;
-    height: 500px;
-    transform: translate(-50%, -50%) rotate(60deg);
-}
-
-.orbit-3 {
-    width: 300px;
-    height: 500px;
-    transform: translate(-50%, -50%) rotate(120deg);
-}
-
-.electron {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 12px;
-    height: 12px;
-    background-color: #ff3700;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкое свечение */
-    /* Анимация движения электрона */
-    animation: electron-move 2s ease-in-out infinite alternate;
+    width: 700px;
+    height: 700px;
+    background-image: url('design/ммм сайт/атом_на фоне первого экрана.svg');
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    opacity:0.3;
+    z-index: 0;
+    pointer-events: none;
+    animation: rotate-atom 50s linear infinite;
 }
 
 /* Вращение всего атома */
-@keyframes atom-spin {
-    0% { transform: translateX(-50%) rotate(0deg); }
-    100% { transform: translateX(-50%) rotate(360deg); }
+@keyframes rotate-atom {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
-
-/* Движение электронов по орбите */
-@keyframes electron-move {
-    0% { top: 0; }
-    100% { top: 100%; }
-}
-
 
 .header_top,
 .header_content,
