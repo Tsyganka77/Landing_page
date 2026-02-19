@@ -1,0 +1,199 @@
+@font-face{
+	font-family: 'coolvetica compressed rg';
+	src: url('design/Coolvetica/coolvetica compressed rg.ttf');
+}
+
+@font-face{
+        font-family: 'coolvetica condensed rg';
+        src: url('design/Coolvetica/coolvetica condensed rg.ttf');
+}
+
+@font-face{
+        font-family: 'coolvetica crammed rg';
+        src: url('design/Coolvetica/coolvetica crammed rg.ttf');
+}
+
+@font-face{
+        font-family: 'coolvetica rg';
+        src: url('design/Coolvetica/coolvetica rg.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f2eeff;
+}
+
+/* ШАПКА */
+.header {
+    background-color: #0040ff;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo_left img,
+.logo_right img {
+    height: 60px;
+    width: auto;
+    padding: 0 100px 0 100px;
+    object-fit: contain;
+}
+
+.header_content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.logo_center {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.subtitle {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.5;
+}
+
+.header_button {
+    display: inline-block;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.header_button img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.header_button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.button_container{
+    display: flex;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.header_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.info_left,
+.info_right {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 18px;
+    padding: 0 100px 0 100px;
+    margin-top: -50px;
+}
+
+.p_info_left,
+.p_info_right {
+    margin: 0;
+}
+
+.background_atom {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    z-index: 0;
+    pointer-events: none;
+    /* Анимация вращения всего атома */
+    animation: atom-spin 20s linear infinite;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(242, 238, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+    width: 300px;
+    height: 500px;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.orbit-2 {
+    width: 300px;
+    height: 500px;
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.orbit-3 {
+    width: 300px;
+    height: 500px;
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.electron {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #ff3700;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Легкое свечение */
+    /* Анимация движения электрона */
+    animation: electron-move 2s ease-in-out infinite alternate;
+}
+
+/* Вращение всего атома */
+@keyframes atom-spin {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Движение электронов по орбите */
+@keyframes electron-move {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+
+.header_top,
+.header_content,
+.header_bottom {
+    position: relative;
+    z-index: 1;
+}
