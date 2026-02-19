@@ -77,11 +77,11 @@ body {
 
 .subtitle {
     font-family: 'coolvetica rg', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     max-width: 60vw;
-    margin: 0 auto 30px;
+    margin: 1vh auto 30px;
     line-height: 1.5;
-    letter-spacing:3px;
+    letter-spacing:1px;
 }
 
 .header_button {
@@ -106,6 +106,7 @@ body {
     display: flex;
     align-items: center;
     margin-top: -10vh;
+    padding-right: 2vw;
 }
 
 .header_bottom {
@@ -117,17 +118,28 @@ body {
     line-height: 1.6;
 }
 
-.info_left,
+
 .info_right {
     font-family: 'coolvetica rg', sans-serif;
-    font-size: 18px;
+    font-size: 21px;
     padding: 0 0px 0 0px;
     margin-top: -10vh;
     line-height: 1.2;
+    text-align: right;
+}
+.info_left{
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 21px;
+    padding: 0 0px 0 0px;
+    margin-top: -10vh;
+    line-height: 1.2;
+
 }
 
-.p_info_left,
 .p_info_right {
+    margin: 0;
+}
+.p_info_left{
     margin: 0;
 }
 
