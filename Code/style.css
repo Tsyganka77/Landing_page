@@ -18,6 +18,16 @@
         src: url('design/Coolvetica/coolvetica rg.ttf');
 }
 
+/* КАСТОМНЫЙ КУРСОР */
+* {
+    cursor: url('design/ммм сайт/курсор.svg'), auto;
+}
+
+/* Курсор-рука для ссылок и кнопок */
+a, button, .header_button, .header_button img {
+    cursor: url('design/ммм сайт/рука.svg'), pointer;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -145,9 +155,9 @@ body {
 
 .background_atom {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -5%;
+    left: -10%;
+    transform: translate(-0%, -0%);
     width: 113vw;
     height: 113vh;
     background-image: url('design/ммм сайт/атом_на фоне первого экрана.svg');
@@ -264,4 +274,190 @@ body {
     vertical-align: middle;
     margin-left: 0.3vw;
     display: inline-block;
+}
+
+/* БЛОК 3: ЦИФРЫ И ФАКТЫ */
+.stats_section {
+    background-color: #f2eeff;
+    padding: 6vh 14.5vw 10vh 14.5vw;
+    color: #0040ff;
+}
+
+.stats_container {
+    display: flex;
+    gap: 0;
+    max-width: 100%;
+}
+
+.stats_main_card {
+    flex: 1;
+    border: 2px solid #0040ff;
+    border-radius: 3vh;
+    padding: 3vh 2vw 3vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 56vh;
+    width: 25vw;
+    position: relative;
+    border-right-width: 1px;
+    vertical-align: middle;
+}
+
+.stats_title_wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 1vw;
+    flex-direction: row;
+
+    width:100%;
+    justify-content: space-between;
+}
+
+
+.stats_title {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 2vw;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 0px;
+}
+
+.stats_arrow {
+    width: 3vw;
+    height: auto;
+    padding-left: 1vw;
+    display: block;
+}
+
+.stats_grid {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+}
+
+.stat_item {
+    border: 2px solid #0040ff;
+    border-radius: 3vh;
+    padding: 3vh 1.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28vh;
+    width: 20vw;
+}
+
+.stat_label {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9vw;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.stat_value {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 2.5vw;
+    margin: 0;
+    line-height: 1;
+}
+
+.stat_item:nth-child(1) {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.stat_item:nth-child(2) {
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.stat_item:nth-child(3) {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+}
+
+.stat_item:nth-child(4) {
+    border-left-width: 1px;
+    border-top-width: 1px;
+}
+
+/* ======================================== */
+/* БЛОК 4: АТОМЫ */
+/* ======================================== */
+
+.atoms_section {
+    background-color: #f2eeff;
+    padding: 0vh 14.5vw 10vh 14.5vw;
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+}
+
+/* Маленькие атомы (фон) */
+.atoms_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.small_atom {
+    position: absolute;
+    width: 10vw;
+    height: auto;
+    opacity: 1;
+    animation: rotate-atom-reverse 40s linear infinite;
+}
+
+/* Позиции маленьких атомов */
+.sa_1 { top: 20%; left: 0%; }
+.sa_2 { top: 20%; left: 90%; }
+.sa_3 { top: 70%; left: 0%; }
+.sa_4 { top: 70%; left: 60%; }
+.sa_5 { top: 20%; left: 60%; }
+.sa_6 { top: 70%; left: 30%; }
+.sa_7 { top: 20%; left: 30%; }
+.sa_8 { top: 70%; left: 90%; }
+
+/* Большие атомы */
+.atoms_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding-top: 10vh;
+    gap: 8vw;
+}
+
+.large_atom {
+    width: 22vw;
+    height: auto;
+    animation: rotate-atom 50s linear infinite;
+    flex-shrink: 0;
+}
+
+/* Вращение больших атомов (по часовой) */
+@keyframes rotate-atom {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Вращение маленьких атомов (против часовой) */
+@keyframes rotate-atom-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
 }
