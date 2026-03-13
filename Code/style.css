@@ -269,7 +269,7 @@ body {
 }
 
 .info_arrow {
-    width: 47.7vw;
+    width: 47.2vw;
     height: auto;
     vertical-align: middle;
     margin-left: 0.3vw;
@@ -333,6 +333,21 @@ body {
     display: block;
 }
 
+.stats_main_card:hover {
+    background-color: #0040ff;
+    transition: background-color 0.3s ease;
+}
+
+.stats_main_card:hover .stats_arrow {
+    color: #f2eeff;
+    transition: color 0.3s ease;
+}
+
+.stats_main_card:hover .stats_title {
+    color: #f2eeff;
+    transition: color 0.3s ease;
+}
+
 .stats_grid {
     flex: 1.5;
     display: grid;
@@ -391,6 +406,21 @@ body {
     border-top-width: 1px;
 }
 
+.stat_item:hover {
+    background-color: #0040ff;
+    transition: background-color 0.3s ease;
+}
+
+.stat_item:hover .stat_label {
+    color: #f2eeff;
+    transition: color 0.3s ease;
+}
+
+.stat_item:hover .stat_value {
+    color: #f2eeff;
+    transition: color 0.3s ease;
+}
+
 /* ======================================== */
 /* БЛОК 4: АТОМЫ */
 /* ======================================== */
@@ -423,13 +453,13 @@ body {
 }
 
 /* Позиции маленьких атомов */
-.sa_1 { top: 20%; left: 0%; }
-.sa_2 { top: 20%; left: 90%; }
+.sa_1 { top: 10%; left: 0%; }
+.sa_2 { top: 10%; left: 90%; }
 .sa_3 { top: 70%; left: 0%; }
 .sa_4 { top: 70%; left: 60%; }
-.sa_5 { top: 20%; left: 60%; }
+.sa_5 { top: 10%; left: 60%; }
 .sa_6 { top: 70%; left: 30%; }
-.sa_7 { top: 20%; left: 30%; }
+.sa_7 { top: 10%; left: 30%; }
 .sa_8 { top: 70%; left: 90%; }
 
 /* Большие атомы */
