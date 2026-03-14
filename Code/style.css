@@ -500,7 +500,7 @@ body {
     background-color: #0040ff;
     padding: 10vh 0;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     min-height: 100vh;
 }
 
@@ -521,29 +521,30 @@ body {
     padding: 0 0 0 14.5vw;
     transition: transform 0.1s ease-out;
     width: max-content;
+    position: relative;
+    z-index:1;
+    transform: translateX(0);
 }
 
 .leadership_card {
     flex-shrink: 0;
-    width: 70vw;
-    max-width: 900px;
+    width: 80vw;
     position: relative;
-    padding: 5vh 3vw;
+    padding: 5vh 3vw 5vh 3vw;
 }
 
 /* Фоновый атом (ОДНО изображение) */
-.card_atom_bg {
+.leadership_atom_fixed {
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 80vw;
     height: auto;
-    object-fit: contain;
+    opacity: 1;
     pointer-events: none;
     z-index: 0;
-    transition: transform 0.1s ease-out;
-    opacity: 0.4;
+    will-change: transform;
 }
 
 /* Контент карточки */
@@ -573,8 +574,11 @@ body {
 }
 
 .card_info {
+    font-family: 'coolvetica rg', sans-serif;
     flex: 1;
     color: #f2eeff;
+    margin-left: -1vw;
+    margin-top: 4vh;
 }
 
 .card_name {
@@ -591,6 +595,7 @@ body {
     margin: 0 0 3vh 0;
     opacity: 0.9;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 69%;
     padding-bottom: 2vh;
 }
 

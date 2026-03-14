@@ -124,12 +124,12 @@
 		</section>
 		<!-- БЛОК 5: РУКОВОДСТВО -->
 		<section class="leadership_section" id="leadership">
+		 <img src="design/ммм сайт/овалы на фоне руководства.svg" class="leadership_atom_fixed" alt="">
     		<h2 class="leadership_title">РУКОВОДСТВО</h2>
 
 		    <div class="leadership_container">
 		        <!-- Карточка 1 -->
 		        <div class="leadership_card" data-index="0">
-		            <img src="design/leadership/атом_фон.svg" class="card_atom_bg" alt="">
 		            <div class="card_content">
 		                <div class="card_photo">
 		                    <img src="design/ммм сайт/leadership/photo1.png" alt="Сироткина А.Г.">
@@ -149,7 +149,6 @@
 
                         <!-- Карточка 2 -->
                         <div class="leadership_card" data-index="1">
-                            <img src="design/leadership/атом_фон.svg" class="card_atom_bg" alt="">
                             <div class="card_content">
                                 <div class="card_photo">
                                     <img src="design/ммм сайт/leadership/photo2.png" alt="Соловьёв Ш.Г.">
@@ -170,7 +169,6 @@
 
 		        <!-- Карточка 3 -->
 		        <div class="leadership_card" data-index="2">
-		            <img src="design/leadership/атом_фон.svg" class="card_atom_bg" alt="">
 		            <div class="card_content">
 		                <div class="card_photo">
 		                    <img src="design/ммм сайт/leadership/photo3.png" alt="Борисёнок В.А.">
@@ -189,7 +187,6 @@
 
 		        <!-- Карточка 4 -->
 		        <div class="leadership_card" data-index="3">
-		            <img src="design/leadership/атом_фон.svg" class="card_atom_bg" alt="">
 		            <div class="card_content">
 		                <div class="card_photo">
 		                    <img src="design/ммм сайт/leadership/photo4.png" alt="Гвланов К.И.">
@@ -209,7 +206,6 @@
 
 		        <!-- Карточка 5 -->
 		        <div class="leadership_card" data-index="4">
-		            <img src="design/leadership/атом_фон.svg" class="card_atom_bg" alt="">
 		            <div class="card_content">
 		                <div class="card_photo">
 		                    <img src="design/ммм сайт/leadership/photo5.png" alt="Самофал А.С.">
@@ -225,125 +221,124 @@
 		            </div>
 		        </div>
 		    </div>
-		</section>
-		<div>
-			<p>kjkhkjhlj<br>kjhkhkjhlkj</p>
-		</div>
-
-<script>
+	<script>
 document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('.leadership_section');
     const container = document.querySelector('.leadership_container');
-    const atoms = document.querySelectorAll('.card_atom_bg');
+    const cards = document.querySelectorAll('.leadership_card');
+    const fixedAtom = document.querySelector('.leadership_atom_fixed');
     
-    if (!section || !container) return;
+    if (!section || !container || cards.length === 0) return;
 
-    // Настройки
-    let horizontalPos = 0;
-    let maxHorizontalScroll = 0;
-    let isInitialized = false;
-    let isInSection = false;
+    let currentCardIndex = 0;
+    let maxCardIndex = cards.length - 1;
+    let cardWidth = 0;
+    let isAnimating = false;
+    let currentRotation = 0;  // ← Отдельная переменная для угла вращения
 
-    // Инициализация
     function init() {
-        const containerWidth = container.scrollWidth;
-        const windowWidth = window.innerWidth;
-        const padding = 14.5 * 2 * windowWidth / 100;
-        maxHorizontalScroll = containerWidth - windowWidth + padding;
-        isInitialized = true;
-        console.log('📏 Max horizontal:', Math.round(maxHorizontalScroll));
+        const rect = cards[0].getBoundingClientRect();
+        const gap = 5 * window.innerWidth / 100;
+        cardWidth = rect.width + gap;
     }
 
-    // Проверка: находится ли секция в фокусе
     function checkInSection() {
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        // Секция в фокусе, если она занимает большую часть экрана
-        isInSection = rect.top <= windowHeight * 0.3 && rect.bottom >= windowHeight * 0.7;
-        return isInSection;
+        return rect.top <= windowHeight * 0.1 && rect.bottom >= windowHeight * 0.9;
     }
 
-    // Основная обработка
-    function handleScroll(e) {
-        if (!isInitialized) return;
+    function goToCard(index, direction) {
+        if (isAnimating) return;
         
-        // Проверяем, в секции ли мы
-        const inSection = checkInSection();
+        index = Math.max(0, Math.min(maxCardIndex, index));
+        if (index === currentCardIndex) return;
         
-        // Получаем дельту скролла
-        let delta = 0;
-        if (e.deltaY) {
-            delta = e.deltaY;
-        } else if (e.key) {
-            if (['ArrowDown', 'PageDown', ' '].includes(e.key)) delta = 100;
-            else if (['ArrowUp', 'PageUp'].includes(e.key)) delta = -100;
-            else return;
+        currentCardIndex = index;
+        isAnimating = true;
+        
+        const scrollPosition = currentCardIndex * cardWidth;
+        
+        container.style.transition = 'transform 0.5s ease-out';
+        container.style.transform = `translateX(-${scrollPosition}px)`;
+        
+        // ← Вращение зависит от направления скролла
+        if (fixedAtom) {
+            // direction: 1 = вправо (по часовой), -1 = влево (против часовой)
+            currentRotation += direction * 180;
+            
+            fixedAtom.style.transition = 'transform 0.5s ease-out';
+            fixedAtom.style.transform = `translate(-50%, -50%) rotate(${currentRotation}deg)`;
         }
         
-        if (delta === 0) return;
+        setTimeout(() => {
+            isAnimating = false;
+            container.style.transition = 'none';
+            if (fixedAtom) fixedAtom.style.transition = 'none';
+        }, 500);
+    }
+
+    function handleWheel(e) {
+        if (!checkInSection()) return;
         
-        const isScrollingDown = delta > 0;
-        const isAtStart = horizontalPos <= 0;
-        const isAtEnd = horizontalPos >= maxHorizontalScroll - 1;
+        const isScrollingDown = e.deltaY > 0;
+        const isAtStart = currentCardIndex <= 0;
+        const isAtEnd = currentCardIndex >= maxCardIndex;
         
-        // === ГЛАВНАЯ ЛОГИКА ===
-        // Если НЕ в секции — не блокируем ничего
-        if (!inSection) {
-            return;
-        }
+        if (isAtStart && !isScrollingDown) return;
+        if (isAtEnd && isScrollingDown) return;
         
-        // Если в начале И скроллим вверх — РАЗБЛОКИРУЕМ вертикальный скролл
-        if (isAtStart && !isScrollingDown) {
-            return; // не блокируем, скроллится страница вверх
-        }
-        
-        // Если в конце И скроллим вниз — РАЗБЛОКИРУЕМ вертикальный скролл
-        if (isAtEnd && isScrollingDown) {
-            return; // не блокируем, скроллится страница вниз
-        }
-        
-        // ИНАЧЕ: блокируем вертикальный скролл и конвертируем в горизонтальный
         e.preventDefault();
         
-        horizontalPos += delta * 0.8;
-        horizontalPos = Math.max(0, Math.min(maxHorizontalScroll, horizontalPos));
+        // direction: 1 = вправо, -1 = влево
+        const direction = isScrollingDown ? 1 : -1;
         
-        // Применяем трансформации
-        container.style.transform = `translateX(-${horizontalPos}px)`;
-        
-        // Вращение атомов
-        const progress = maxHorizontalScroll > 0 ? horizontalPos / maxHorizontalScroll : 0;
-        atoms.forEach(atom => {
-            atom.style.transform = `translate(-50%, -50%) rotate(${-180 * progress}deg)`;
-        });
+        if (isScrollingDown) {
+            goToCard(currentCardIndex + 1, direction);
+        } else {
+            goToCard(currentCardIndex - 1, direction);
+        }
     }
 
-    // Слушатели
-    window.addEventListener('load', init);
-    
-    window.addEventListener('resize', () => { 
-        isInitialized = false; 
-        horizontalPos = 0; 
-        container.style.transform = 'translateX(0)';
-        atoms.forEach(atom => {
-            atom.style.transform = 'translate(-50%, -50%) rotate(0deg)';
-        });
-        init(); 
-    });
-    
-    window.addEventListener('wheel', handleScroll, { passive: false });
-    
-    window.addEventListener('keydown', (e) => {
+    function handleKeydown(e) {
         const tag = document.activeElement?.tagName?.toLowerCase();
         if (tag === 'input' || tag === 'textarea') return;
+        if (!checkInSection()) return;
         
-        if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', ' '].includes(e.key)) {
-            handleScroll(e);
+        const isAtStart = currentCardIndex <= 0;
+        const isAtEnd = currentCardIndex >= maxCardIndex;
+        
+        if (['ArrowDown', 'PageDown', ' '].includes(e.key)) {
+            if (isAtEnd) return;
+            e.preventDefault();
+            goToCard(currentCardIndex + 1, 1);  // ← Вправо (по часовой)
         }
-    });
-});
-</script>
+        else if (['ArrowUp', 'PageUp'].includes(e.key)) {
+            if (isAtStart) return;
+            e.preventDefault();
+            goToCard(currentCardIndex - 1, -1);  // ← Влево (против часовой)
+        }
+    }
 
-</body>
+    window.addEventListener('load', init);
+    window.addEventListener('resize', () => { init(); goToCard(currentCardIndex, 0); });
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('keydown', handleKeydown);
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                currentCardIndex = 0;
+                currentRotation = 0;  // ← Сброс вращения
+                container.style.transform = 'translateX(0)';
+                if (fixedAtom) {
+                    fixedAtom.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+                }
+            }
+        });
+    }, { threshold: 0.1 });
+    observer.observe(section);
+});
+</script></body>
 </html>
 
