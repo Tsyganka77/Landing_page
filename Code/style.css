@@ -1,4 +1,9 @@
 @font-face{
+	font-family: "Garcia";
+	src: url('design/GarciaMarquez/GarciaMarquez.otf')
+}
+
+@font-face{
 	font-family: 'coolvetica compressed rg';
 	src: url('design/Coolvetica/coolvetica compressed rg.ttf');
 }
@@ -505,7 +510,7 @@ body {
 }
 
 .leadership_title {
-    font-family: 'coolvetica', sans-serif;
+    font-family: 'Garcia', sans-serif;
     font-size: 4vw;
     color: #f2eeff;
     text-align: left;
