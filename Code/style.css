@@ -284,30 +284,24 @@ body {
 /* БЛОК 3: ЦИФРЫ И ФАКТЫ */
 .stats_section {
     background-color: #f2eeff;
-    padding: 6vh 14.5vw 10vh 14.5vw;
+    padding: 6vh 14.5vw 20vh 14.5vw;
     color: #0040ff;
 }
 
-.stats_container {
-    display: flex;
-    gap: 0;
-    max-width: 100%;
+.stat_title{
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 3vw;
+    font-weight: 400;
+    color: #0040ff;
+    text-align: center;
+    margin-bottom: 9vh;
 }
 
-.stats_main_card {
-    flex: 1;
-    border: 2px solid #0040ff;
-    border-radius: 3vh;
-    padding: 3vh 2vw 3vh 2vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    height: 56vh;
-    width: 25vw;
-    position: relative;
-    border-right-width: 1px;
-    vertical-align: middle;
+.stats_container {
+    display: grid;
+/*    grid-template-columns: 1fr 1fr; */
+    gap: 0;
+    max-width: 100%;
 }
 
 .stats_title_wrapper {
@@ -320,43 +314,10 @@ body {
     justify-content: space-between;
 }
 
-
-.stats_title {
-    font-family: 'coolvetica rg', sans-serif;
-    font-size: 2vw;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin: 0;
-    letter-spacing: 0px;
-}
-
-.stats_arrow {
-    width: 3vw;
-    height: auto;
-    padding-left: 1vw;
-    display: block;
-}
-
-.stats_main_card:hover {
-    background-color: #0040ff;
-    transition: background-color 0.3s ease;
-}
-
-.stats_main_card:hover .stats_arrow {
-    color: #f2eeff;
-    transition: color 0.3s ease;
-}
-
-.stats_main_card:hover .stats_title {
-    color: #f2eeff;
-    transition: color 0.3s ease;
-}
-
 .stats_grid {
     flex: 1.5;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 0;
 }
@@ -368,12 +329,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 28vh;
-    width: 20vw;
+    height: 30vh;
+    width: auto;
 }
 
 .stat_label {
-    font-family: 'Arial', sans-serif;
+    font-family: 'coolvetica rg', sans-serif;
     font-size: 0.9vw;
     font-weight: 700;
     line-height: 1.4;
@@ -390,7 +351,6 @@ body {
 }
 
 .stat_item:nth-child(1) {
-    border-left-width: 1px;
     border-right-width: 1px;
     border-bottom-width: 1px;
 }
@@ -398,15 +358,38 @@ body {
 .stat_item:nth-child(2) {
     border-left-width: 1px;
     border-bottom-width: 1px;
+    border-right-width: 1px;
 }
 
 .stat_item:nth-child(3) {
     border-left-width: 1px;
     border-right-width: 1px;
-    border-top-width: 1px;
+    border-bottom-width: 1px;
 }
 
 .stat_item:nth-child(4) {
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+}
+
+.stat_item:nth-child(5) {
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+
+.stat_item:nth-child(6) {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+}
+
+.stat_item:nth-child(7) {
+    border-left-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+
+.stat_item:nth-child(8) {
     border-left-width: 1px;
     border-top-width: 1px;
 }
@@ -427,12 +410,12 @@ body {
 }
 
 /* ======================================== */
-/* БЛОК 4: АТОМЫ */
+/* БЛОК 5: АТОМЫ */
 /* ======================================== */
 
 .atoms_section {
     background-color: #0040ff;
-    padding: 0vh 14.5vw 16vh 14.5vw;
+    padding: 2vh 14.5vw 16vh 14.5vw;
     position: relative;
     overflow: hidden;
     min-height: 60vh;
@@ -498,7 +481,7 @@ body {
 }
 
 /* ======================================== */
-/* БЛОК 5: РУКОВОДСТВО */
+/* БЛОК 4: РУКОВОДСТВО */
 /* ======================================== */
 
 .leadership_section {
