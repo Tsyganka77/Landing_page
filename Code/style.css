@@ -33,6 +33,11 @@ a, button, .header_button, .header_button img {
     cursor: url('design/ммм сайт/рука.svg'), pointer;
 }
 
+html, body {
+    overflow-x: hidden;  /* ← БЛОКИРУЕТ горизонтальный скролл страницы */
+    width: 100%;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -489,7 +494,7 @@ body {
     padding: 10vh 0;
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 .leadership_title {
@@ -596,4 +601,294 @@ body {
     margin: 0;
 }
 
+/* ======================================== */
+/* БЛОК 6: НАПРАВЛЕНИЯ */
+/* ======================================== */
 
+.directions_section {
+    background-color: #f2eeff;
+    padding: 10vh 0vw;
+    position: relative;
+    overflow: visible;
+}
+
+.directions_title {
+    font-family: 'Garcia', sans-serif;
+    font-size: 4vw;
+    color: #0040ff;
+    text-align: left;
+    margin: 10vh 0 5vh 14.5vw;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Карусель карточек */
+.directions_carousel {
+    display: flex;
+    gap: 1vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 2vh 80vw 5vh 30vw;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    min-height: 45vh;
+}
+
+.directions_carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.direction_card {
+    flex-shrink: 0;
+    width: 22vw;
+    min-width: 280px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index:1;
+    transform-origin: top center;
+    margin-bottom: 1vh;
+}
+
+
+
+.direction_card.active {
+    transform: scale(1.3);
+    z-index: 100;
+    margin: 0 3.3vw 0 3.3vw;
+}
+
+.direction_card.active .card_label {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.card_frame {
+    width: 100%;
+    height: 38vh;
+    min-height: 320px;
+    border: 3px solid #0040ff;
+    border-radius: 3vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+.card_photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card_label {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.4vw;
+    color: #0040ff;
+    margin-top: 2vh;
+    line-height: 1.3;
+    text-align: center;
+    font-weight: 600;
+    min-height: 3vh;
+}
+
+/* Детальная информация */
+.direction_details {
+    margin: 0vh 14.5vw 0 14.5vw; 
+}
+
+.detail_sec{
+	height: 60vh;
+}
+
+.detail_level {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1vw;
+    color: #0040ff;
+    margin-bottom: 1vh;
+    font-weight:300;
+    letter-spacing: 1px;
+}
+
+.detail_title {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 3.5vw;
+    color: #0040ff;
+    margin-bottom: 2vh;
+    line-height: 1;
+}
+
+.detail_ege {
+    margin-bottom: 3vh;
+}
+
+.detail_ege img {
+    max-width: 44vw;
+    height: auto;
+    display: block;
+}
+
+.detail_description {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.3vw;
+    color: #0040ff;
+    line-height: 1.6;
+    margin-bottom: 0vh;
+    height:30vh;
+    max-width: 80vw;
+    white-space: normal;
+}
+
+.detail_description.justified {
+    text-align: justify !important;
+    text-justify: inter-word !important;
+}
+
+.detail_ege img[src*="егэ_матан_рус_физ.svg"]:not([src*="инф"]) {
+    max-width: 36vw;
+    max-height: 6vh;
+}
+
+.detail_ege img[src*="егэ_мат_рус_общ_ист.svg"] {
+    max-width: 48vw;
+    max-height: 8vh;
+}
+
+.detail_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0vh;
+}
+
+.more_strip {
+    width: 8.6vw;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+.detail_more {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.3vw;
+    color: #0040ff;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: opacity 0.3s;
+}
+
+.detail_more:hover {
+    opacity: 0.7;
+}
+
+.detail_arrows {
+    display: flex;
+    gap: 2vw;
+}
+
+.arrow_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s;
+}
+
+.arrow_btn:hover {
+    transform: scale(1.1);
+}
+
+.arrow_btn img {
+    width: 2vw;
+    height: auto;
+    display: block;
+}
+
+/* ======================================== */
+/* БЛОК 7: ДОРОЖНАЯ КАРТА */
+/* ======================================== */
+
+.roadmap_section {
+    background-color: #0040ff;
+    padding: 10vh 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 120vh;
+}
+
+/* Горизонтальные линии */
+.roadmap_line_sep {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(242, 238, 255, 0.3);
+}
+
+/* Позиции линий */
+.roadmap_line_sep:nth-child(1) { top: 20vh; }
+.roadmap_line_sep:nth-child(2) { top: 40vh; }
+.roadmap_line_sep:nth-child(3) { top: 60vh; }
+.roadmap_line_sep:nth-child(4) { top: 80vh; }
+.roadmap_line_sep:nth-child(5) { top: 100vh; }
+
+/* Большие заголовки этапов */
+.roadmap_stage {
+    position: absolute;
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 5vw;
+    color: #f2eeff;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* Позиции заголовков */
+#stage_1 { top: 14vh; left: 14.5vw; }
+#stage_2 { top: 30vh; right: 14.5vw; }
+#stage_3 { top: 50vh; left: 14.5vw; }
+#stage_4 { top: 70vh; right: 14.5vw; }
+#stage_5 { top: 90vh; left: 14.5vw; }
+
+/* Маленькие описания */
+.roadmap_desc {
+    position: absolute;
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.2vw;
+    color: #f2eeff;
+    line-height: 1.4;
+    opacity: 0.9;
+    max-width: 30vw;
+}
+
+/* Позиции описаний */
+#desc_1 { top: 11vh; right: 14.5vw; text-align: right; }
+#desc_2 { top: 31vh; left: 14.5vw; text-align: left; }
+#desc_3 { top: 51vh; right: 14.5vw; text-align: right; }
+#desc_4 { top: 71vh; left: 14.5vw; text-align: left; }
+#desc_5 { top: 91vh; right: 14.5vw; text-align: right; }
+
+/* БЛОК 8: ДЕКОРАТИВНЫЙ */
+
+.decorative_section {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.decorative_image {
+    width: 100vw;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}

@@ -235,6 +235,270 @@
 		   </div>
 		</section>
 
+		<!-- БЛОК 6: НАПРАВЛЕНИЯ -->
+<section class="directions_section" id="directions">
+    <h2 class="directions_title">НАПРАВЛЕНИЯ</h2>
+
+    <!-- Карусель карточек -->
+    <div class="directions_carousel">
+        <div class="direction_card" data-index="0">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Прикладная математика" class="card_photo">
+            </div>
+            <p class="card_label">Прикладная математика<br>и информатика</p>
+        </div>
+
+        <div class="direction_card active" data-index="1">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Прикладная механика" class="card_photo">
+            </div>
+            <p class="card_label">Прикладная механика</p>
+        </div>
+
+        <div class="direction_card" data-index="2">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Электроника" class="card_photo">
+            </div>
+            <p class="card_label">Электроника и автоматика<br>физических установок</p>
+        </div>
+
+        <div class="direction_card" data-index="3">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Экономика" class="card_photo">
+            </div>
+            <p class="card_label">Экономика</p>
+        </div>
+
+        <div class="direction_card" data-index="4">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Информатика" class="card_photo">
+            </div>
+            <p class="card_label">Информатика и вычислительная<br>техника</p>
+        </div>
+
+        <div class="direction_card" data-index="5">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Информационные системы" class="card_photo">
+            </div>
+            <p class="card_label">Информационные системы<br>и технологии</p>
+        </div>
+
+        <div class="direction_card" data-index="6">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Конструкторское обеспечение" class="card_photo">
+            </div>
+	    <p class="card_label">Конструкторско-технологическое<br>обеспечение машиностроительных<br>производств</p>
+        </div>
+	<div class="direction_card" data-index="7">
+            <div class="card_frame">
+                <img src="design/ммм сайт/photo1.jpg" alt="Конструкторское обеспечение" class="card_photo">
+            </div>
+            <p class="card_label">Прикладная математика и физика</p>
+        </div>
+
+    </div>
+
+    <!-- Детальная информация (меняется при клике) -->
+    <div class="direction_details">
+	    <div class="detail_sec">
+        <p class="detail_level">Бакалавриат/Очная</p>
+        <h3 class="detail_title">Прикладная механика</h3>
+        <div class="detail_ege">
+            <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ.svg" alt="ЕГЭ требования" id="ege_image">
+        </div>
+        <p class="detail_description" id="detail_description">
+            Станьте инженером, который понимает законы движения и прочности. Мы готовим специалистов по анализу напряжений, динамике машин и проектированию несущих конструкций, способных создавать надежные, долговечные и эффективные механизмы – от авиационных двигателей до высокоточного оборудования.
+        </p>
+	    </div>
+        <div class="detail_footer">
+		<div class="more_wrapper">
+           		 <a href="#" class="detail_more">узнать больше</a>
+	    		<img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/линия под узнать больше.svg"
+             		alt=""
+            		 class="more_strip">
+   		 </div>
+            <div class="detail_arrows">
+                <button class="arrow_btn arrow_left" onclick="changeDirection(-1)">
+                    <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/стрелка влево.svg" alt="←">
+                </button>
+                <button class="arrow_btn arrow_right" onclick="changeDirection(1)">
+                    <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/стрелка вправо.svg" alt="→">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- БЛОК 7: ДОРОЖНАЯ КАРТА -->
+<section class="roadmap_section" id="roadmap">
+    <!-- Линии (горизонтальные разделители) -->
+    <div class="roadmap_line_sep"></div>
+    <div class="roadmap_line_sep"></div>
+    <div class="roadmap_line_sep"></div>
+    <div class="roadmap_line_sep"></div>
+    <div class="roadmap_line_sep"></div>
+    
+    <!-- Большие заголовки этапов -->
+    <div class="roadmap_stage" id="stage_1">1-2 курс</div>
+    <div class="roadmap_stage" id="stage_2">3-4 курс</div>
+    <div class="roadmap_stage" id="stage_3">Стажировка</div>
+    <div class="roadmap_stage" id="stage_4">Выпуск</div>
+    <div class="roadmap_stage" id="stage_5">Карьера</div>
+    
+    <!-- Маленькие описания -->
+    <div class="roadmap_desc" id="desc_1">База + первые проекты<br>в лабораториях ВНИИЭФ</div>
+    <div class="roadmap_desc" id="desc_2">Углубленная специализация,<br>реальные исследовательские задачи</div>
+    <div class="roadmap_desc" id="desc_3">Практика в РФЯЦ-ВНИИЭФ<br>с научным руководителем</div>
+    <div class="roadmap_desc" id="desc_4">Защита диплома,<br>оффер от предприятия</div>
+    <div class="roadmap_desc" id="desc_5">Инженер-разработчик,<br>ученый, руководитель проекта</div>
+</section>
+<!-- БЛОК 8: ДЕКОРАТИВНЫЙ -->
+<section class="decorative_section" id="decorative">
+    <img src="design/ммм сайт/screens/паттерн сарфти.png" alt="" class="decorative_image">
+</section>
+
+
+<script>
+// Данные для каждого направления
+const directionsData = [
+    {
+        level: 'Бакалавриат/Очная',
+	    title: 'Прикладная математика <br> и информатика',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ_инф.svg',
+	    description: 'Это направление для инженеров, мыслящих формулами. Фокус на алгоритмизации, разработке <br> математического обеспечения и высокопроизводительных вычислениях. Выпускники работают на стыке <br> чистой науки и IT, создавая передовые решения в области Data Science, Machine Learning и финансового <br> моделирования.'
+    },
+    {
+        level: 'Бакалавриат/Очная',
+        title: 'Прикладная механика',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ.svg',
+	    description: 'Станьте инженером, который понимает законы движения и прочности. Мы готовим специалистов по анализу <br> напряжений, динамике машин и проектированию несущих конструкций, способных создавать надежные, <br>  долговечные и эффективные механизмы – от авиационных двигателей до высокоточного оборудования.'
+    },
+    {
+        level: 'Специалитет/Очная',
+	    title: 'Электроника и автоматика <br> физических установок',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ_инф.svg',
+	    description: 'Мы готовим инженеров, способных создавать, настраивать и обслуживать сложнейшее научное и <br> промышленное оборудование. Вы освоите принципы схемотехники, систем управления и обработки сигналов, <br> применяя их для автоматизации физических установок (лазерных систем, ускорителей, детекторов). Вы <br> станете мостом между физикой и технической реализацией.'
+    },
+    {
+        level: 'Бакалавриат/Очная',
+        title: 'Экономика',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_мат_рус_общ_ист.svg',
+	    description: 'Мы готовим профессионалов, способных анализировать сложные рыночные процессы, прогнозировать <br> тренды и принимать обоснованные управленческие решения. Вы освоите современный эконометрический <br> инструментарий, макро- и микроэкономическое моделирование. Станьте ключевым аналитиком в бизнесе, <br> финансах или государственном секторе.'
+    },
+    {
+        level: 'Бакалавриат/Очно-заочная, Очная',
+	    title: 'Информатика и вычислительная <br> техника',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ_инф.svg',
+	    description: 'Фундаментальная подготовка по программированию, алгоритмизации и системному анализу. <br> Освоение полного цикла разработки ПО позволит выпускникам работать в любой IT-сфере: от Data <br> Science до кибербезопасности. Готовим инженеров, способных проектировать надежные и адаптивные <br> цифровые решения. Ваши знания станут основой для создания технологий завтрашнего дня.'
+    },
+    {
+        level: 'Бакалавриат/Очная',
+	    title: 'Информационные системы <br> и технологии',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ_инф.svg',
+	    description: 'Освойте искусство работы с данными и построения интегрированных IT-решений. Программа фокусируется на <br> базах данных, системном администрировании, веб-технологиях и обеспечении качества ПО. Вы будете <br>  проектировать системы, которые работают эффективно и бесперебойно.'
+    },
+    {
+        level: 'Бакалавриат/Очная',
+	    title: 'Конструкторско-технологическое <br> обеспечение машиностроительных <br> производств',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ.svg',
+	    description: 'Фундаментальная подготовка в области проектирования деталей, выбора материалов и оптимизации <br> производственных процессов. Выпускники владеют всем комплексом знаний для обеспечения выпуска <br> конкурентоспособной продукции: от конструирования <br> до метрологии и контроля качества на производстве.'
+    },
+    {
+        level: 'Бакалавриат/Очная',
+            title: 'Прикладная математика и физика',
+        egeImage: 'design/ммм сайт/screens/blok_directions/svg_files_for_directions/егэ_матан_рус_физ.svg',
+	    description: 'Вы получаете уникальное двойное фундаментальное образование, которое объединяет строгий <br> математический аппарат с глубоким пониманием законов природы. Выпускиники готовы к работе в передовых <br> облостях, где требуются прорывные решения: квантовые технологии, создание новых материалов, <br> высокоточные вычисления и моделирование физических процессов.'
+    }
+];
+
+let currentDirection = 1;
+const ACTIVE_ZONE_PERCENT = 0.30;  // ← 30% от левого края
+
+// ← ИСПРАВЛЕННАЯ функция прокрутки
+function scrollToCard(cardElement) {
+    const container = document.querySelector('.directions_carousel');
+    
+    // Абсолютная позиция центра карточки в прокручиваемой области
+    const cardAbsoluteCenter = cardElement.offsetLeft + cardElement.offsetWidth / 2;
+    
+    // Целевая позиция (30% от ширины контейнера)
+    const targetPosition = container.offsetWidth * ACTIVE_ZONE_PERCENT;
+    
+    // Прокручиваем так, чтобы центр карточки совпал с целевой позицией
+    container.scrollTo({
+        left: cardAbsoluteCenter - targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+// Функция изменения направления
+function changeDirection(delta) {
+    const cards = document.querySelectorAll('.direction_card');
+    const totalCards = cards.length;
+
+    currentDirection += delta;
+    if (currentDirection < 0) currentDirection = 0;
+    if (currentDirection >= totalCards) currentDirection = totalCards - 1;
+
+    cards.forEach(card => card.classList.remove('active'));
+    cards[currentDirection].classList.add('active');
+
+    // ← ИСПОЛЬЗУЕМ исправленную функцию
+    scrollToCard(cards[currentDirection]);
+
+    updateDetails(currentDirection);
+}
+
+// Функция обновления детальной информации
+function updateDetails(index) {
+    const data = directionsData[index];
+    if (!data) return;
+    
+    const descriptionElement = document.getElementById('detail_description');
+    
+    // Добавляем класс
+    descriptionElement.classList.add('justified');
+    
+    // Вставляем текст
+    descriptionElement.innerHTML = data.description;
+    
+    // Обновляем остальное
+    document.querySelector('.detail_level').textContent = data.level;
+    document.querySelector('.detail_title').innerHTML = data.title;
+    const egeImg = document.getElementById('ege_image');
+    if (egeImg) egeImg.src = data.egeImage;
+}
+
+ 
+
+// Клик по карточке
+document.querySelectorAll('.direction_card').forEach((card, index) => {
+    card.addEventListener('click', function() {
+        currentDirection = index;
+        
+        document.querySelectorAll('.direction_card').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        
+        updateDetails(index);
+        
+        // ← ИСПОЛЬЗУЕМ исправленную функцию
+        scrollToCard(this);
+    });
+});
+
+// ← Инициализация при загрузке: позиционируем активную карточку
+window.addEventListener('load', () => {
+    const cards = document.querySelectorAll('.direction_card');
+    if (cards[currentDirection]) {
+        // Без анимации при первой загрузке
+        const container = document.querySelector('.directions_carousel');
+        const cardElement = cards[currentDirection];
+        const cardAbsoluteCenter = cardElement.offsetLeft + cardElement.offsetWidth / 2;
+        const targetPosition = container.offsetWidth * ACTIVE_ZONE_PERCENT;
+        container.scrollLeft = cardAbsoluteCenter - targetPosition;
+    }
+});
+</script>
+
 	<script>
 document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('.leadership_section');
