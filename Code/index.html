@@ -338,11 +338,11 @@
     <div class="roadmap_line_sep"></div>
     
     <!-- Большие заголовки этапов -->
-    <div class="roadmap_stage" id="stage_1">1-2 курс</div>
-    <div class="roadmap_stage" id="stage_2">3-4 курс</div>
-    <div class="roadmap_stage" id="stage_3">Стажировка</div>
-    <div class="roadmap_stage" id="stage_4">Выпуск</div>
-    <div class="roadmap_stage" id="stage_5">Карьера</div>
+    <img src="design/ммм сайт/screens/blok_timeline/1-2 курс.svg" alt="1-2 курс" class="roadmap_stage" id="stage_1">
+    <img src="design/ммм сайт/screens/blok_timeline/3-4 курс.svg" alt="3-4 курс" class="roadmap_stage" id="stage_2">
+    <img src="design/ммм сайт/screens/blok_timeline/Cтажировка.svg" alt="Стажировка" class="roadmap_stage" id="stage_3">
+    <img src="design/ммм сайт/screens/blok_timeline/Выпуск.svg" alt="Выпуск" class="roadmap_stage" id="stage_4">
+    <img src="design/ммм сайт/screens/blok_timeline/Карьера.svg" alt="Карьера" class="roadmap_stage" id="stage_5">
     
     <!-- Маленькие описания -->
     <div class="roadmap_desc" id="desc_1">База + первые проекты<br>в лабораториях ВНИИЭФ</div>
@@ -357,7 +357,206 @@
 </section>
 
 
+<!-- БЛОК 9: КАРТА ТЕРРИТОРИИ -->
+<section class="map_section" id="map">
+    <h2 class="map_title">КАРТА <span class="map_subtitle">территории СарФТИ</span></h2>
+
+    <!-- Окно просмотра карты -->
+    <div class="map_viewport" id="map_viewport">
+        <div class="map_container" id="map_container">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg" alt="Карта территории СарФТИ" class="map_image" id="map_image">	
+        </div>
+    </div>
+
+    <!-- Кнопки навигации по корпусам (изображения) -->
+    <div class="map_controls">
+        <div class="map_buttons">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка 1 корпус.svg" alt="1 корпус" class="map_btn_img active" data-building="building1">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка 2 корпус.svg" alt="2 корпус" class="map_btn_img" data-building="building2">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка 3 корпус.svg" alt="3 корпус" class="map_btn_img" data-building="building3">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка 4 корпус.svg" alt="4 корпус" class="map_btn_img" data-building="building4">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка 5 корпус.svg" alt="5 корпус" class="map_btn_img" data-building="building5">
+        </div>
+        <div class="map_buttons">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка общежитие1.svg" alt="Общежитие №1" class="map_btn_img" data-building="dorm1">
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка общежитие2.svg" alt="Общежитие №2" class="map_btn_img" data-building="dorm2">
+        </div>
+    </div>
+
+    <!-- Кнопки перемещения (изображения) -->
+    <div class="map_navigation">
+        <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка вверх.svg" alt="Приблизить" class="nav_btn_img" id="zoom_in">
+     <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка расширить.svg" alt="Раскрыть" class="nav_btn_img" id="btn_toggle_expand">
+    <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/кнопка сузить.svg" alt="Свернуть" class="nav_btn_img" id="btn_toggle_collapse" style="display: none;">
+    </div>
+</section>
+
+
+
 <script>
+
+// Интерактивная карта
+document.addEventListener('DOMContentLoaded', () => {
+    const viewport = document.getElementById('map_viewport');
+    const container = document.getElementById('map_container');
+    const mapImage = document.getElementById('map_image');
+    const buttons = document.querySelectorAll('.map_btn_img');
+    const zoomIn = document.getElementById('zoom_in');
+    const btnToggle = document.getElementById('btn_toggle');
+   
+
+
+    // Проверка что элементы существуют
+    if (!viewport || !container || !mapImage) {
+        console.error('Не найдены элементы карты!');
+        return;
+    }
+    
+    let isDragging = false;
+    let startX, startY, scrollLeft, scrollTop;
+    let scale = 1;
+    let currentBuilding = 'building1';
+    let isExpanded = false;
+    
+    // Карты для каждого корпуса/общежития
+    const buildingMaps = {
+        building1: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
+        building2: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
+        building3: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
+        building4: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
+        building5: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
+        dorm1: 'design/ммм сайт/map/dorm1_map.png',
+        dorm2: 'design/ммм сайт/map/dorm2_map.png'
+    };
+    
+    // Позиции для каждого корпуса
+    const buildingPositions = {
+        building1: { x: 0, y: -1375, scale: 1 },
+        building2: { x: 0, y: -880, scale: 0.95 },
+        building3: { x: 15, y: -480, scale: 0.95 },
+        building4: { x: 0, y: -170, scale: 1 },
+        building5: { x: 0, y: 20, scale: 1 },
+        dorm1: { x: -300, y: -400, scale: 1 },
+        dorm2: { x: 100, y: -500, scale: 1 }
+    };
+    
+    // Корпуса для которых НУЖЕН сдвиг вниз при раскрытии
+    const buildingsWithOffset = ['building1', 'building2', 'building3', 'building4'];
+    
+    // Drag & Drop
+    viewport.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - viewport.offsetLeft;
+        startY = e.pageY - viewport.offsetTop;
+        scrollLeft = -getTranslateX();
+        scrollTop = -getTranslateY();
+        viewport.style.cursor = 'grabbing';
+    });
+    
+    viewport.addEventListener('mouseleave', () => {
+        isDragging = false;
+        viewport.style.cursor = 'grab';
+    });
+    
+    viewport.addEventListener('mouseup', () => {
+        isDragging = false;
+        viewport.style.cursor = 'grab';
+    });
+    
+    viewport.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - viewport.offsetLeft;
+        const y = e.pageY - viewport.offsetTop;
+        const walkX = (x - startX) * 1;
+        const walkY = (y - startY) * 1;
+        setTransform(scrollLeft + walkX, scrollTop + walkY, scale);
+    });
+    
+    // Кнопки корпусов и общежитий
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log('Клик:', btn.dataset.building);
+        
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentBuilding = btn.dataset.building;
+        
+        viewport.classList.remove('building1', 'building2', 'building3', 'building4', 'building5', 'dorm1', 'dorm2');
+        viewport.classList.add(currentBuilding);
+        
+        // Меняем изображение карты
+        if (buildingMaps[currentBuilding]) {
+            mapImage.src = buildingMaps[currentBuilding];
+        }
+        
+        // ← ИСПРАВЛЕНО: Не сбрасываем для корпусов, только для общежитий
+        const pos = buildingPositions[currentBuilding];
+        if (pos) {
+            scale = pos.scale;
+            setTransform(pos.x, pos.y, scale);
+        }
+    });
+});
+    
+    // Кнопка увеличения масштаба
+    if (zoomIn) {
+        zoomIn.addEventListener('click', () => {
+            scale = Math.min(scale + 0.2, 3);
+            setTransform(getTranslateX(), getTranslateY(), scale);
+        });
+    }
+    
+    // Кнопки раскрытия/закрытия окна (ДВЕ отдельные кнопки)
+const btnExpand = document.getElementById('btn_toggle_expand');
+const btnCollapse = document.getElementById('btn_toggle_collapse');
+
+// Клик по кнопке "Раскрыть"
+if (btnExpand) {
+    btnExpand.addEventListener('click', () => {
+        console.log('Клик по РАСКРЫТЬ!');
+        viewport.classList.add('expanded');
+        btnExpand.style.display = 'none';
+        btnCollapse.style.display = 'block';
+    });
+}
+
+// Клик по кнопке "Свернуть"
+if (btnCollapse) {
+    btnCollapse.addEventListener('click', () => {
+        console.log('Клик по СВЕРНУТЬ!');
+        viewport.classList.remove('expanded');
+        btnCollapse.style.display = 'none';
+        btnExpand.style.display = 'block';
+    });
+}
+    
+    // Вспомогательные функции
+    function getTranslateX() {
+        const transform = container.style.transform;
+        if (!transform) return 0;
+        const match = transform.match(/translate\((-?\d+)px/);
+        return match ? parseInt(match[1]) : 0;
+    }
+    
+    function getTranslateY() {
+        const transform = container.style.transform;
+        if (!transform) return 0;
+        const match = transform.match(/,\s*(-?\d+)px/);
+        return match ? parseInt(match[1]) : 0;
+    }
+    
+    function setTransform(x, y, s) {
+        const yOffset = (isExpanded && buildingsWithOffset.includes(currentBuilding)) ? 35 : 0;
+        container.style.transform = `translate(${x}px, ${y + (yOffset * viewport.offsetHeight / 100)}px) scale(${s})`;
+        scale = s;
+    }
+    
+    // Инициализация
+    setTransform(0, 0, 1);
+    
+    console.log('Карта инициализирована');
+});
 // Данные для каждого направления
 const directionsData = [
     {
