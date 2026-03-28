@@ -1025,3 +1025,202 @@ body {
     opacity: 1;
     transform: scale(1.1);
 }
+
+/* ======================================== */
+/* БЛОК 10: ГРУППЫ В ВК */
+/* ======================================== */
+
+.vk_groups_section {
+    background-color: #f2eeff;
+    padding: 10vh 14.5vw;
+    position: relative;
+}
+
+.vk_groups_title {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 4vw;
+    color: #0040ff;
+    text-align: center;
+    margin-bottom: 5vh;
+    letter-spacing: 2px;
+}
+
+/* Контейнер */
+.vk_groups_container {
+    position: relative;
+    width: 100%;
+    min-height: 145vh;  /* Под 23 карточки */
+}
+
+/* Базовые стили карточки */
+.vk_group_card {
+    position: absolute;
+    text-decoration: none;
+    width: var(--card-width, 30%);  /* ← Контроль ширины */
+    top: var(--card-top, 0);         /* ← Контроль позиции top */
+    left: var(--card-left, 0);       /* ← Контроль позиции left */
+}
+
+.vk_card_inner {
+    background-color: #fff;
+    border: 2px solid #0040ff;
+    border-radius: 2vh;
+    padding: 2vh 1.5vw;
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 12vh;
+}
+
+/* Аватарка */
+.vk_group_avatar {
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Контент */
+.vk_card_content {
+    flex: 1;
+}
+
+.vk_group_name {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.1vw;
+    color: #0040ff;
+    margin: 0 0 0.5vh 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.vk_group_link {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 0.9vw;
+    color: #0040ff;
+    margin: 0;
+    opacity: 0.7;
+}
+
+/* Иконка ВК */
+.vk_icon {
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+    top: 1.5vh;
+    right: 1.5vw;
+}
+
+.vk_icon_hover {
+    display: none;
+}
+
+/* Эффект при наведении */
+.vk_group_card:hover .vk_card_inner {
+    background-color: #0040ff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 64, 255, 0.3);
+}
+
+.vk_group_card:hover .vk_group_name,
+.vk_group_card:hover .vk_group_link {
+    color: #f2eeff;
+}
+
+.vk_group_card:hover .vk_icon_default {
+    display: none;
+}
+
+.vk_group_card:hover .vk_icon_hover {
+    display: block;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .vk_groups_container {
+        min-height: 200vh;
+    }
+    
+    .vk_group_card {
+        width: 45% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .vk_groups_section {
+        padding: 5vh 5vw;
+    }
+    
+    .vk_groups_title {
+        font-size: 8vw;
+    }
+    
+    .vk_groups_container {
+        min-height: auto;
+    }
+    
+    .vk_group_card {
+        position: relative;
+        width: 100% !important;
+        margin-bottom: 3vh;
+        top: auto !important;
+        left: auto !important;
+    }
+}
+
+/* ======================================== */
+/* БЛОК 11: ВИДЕО О САРФТИ */
+/* ======================================== */
+
+.video_section {
+    background-color: #f2eeff;
+    padding: 10vh 4vw;
+    position: relative;
+}
+
+.video_title {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 4vw;
+    color: #0040ff;
+    text-align: center;
+    margin-bottom: 5vh;
+    letter-spacing: 2px;
+}
+
+.video_wrapper {
+    max-width: 92vw;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    border-radius: 3vh;
+    overflow: hidden;
+    border: 3px solid #0040ff;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+.custom-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3vw;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s;
+}
+
+/* Скрыть кнопку после клика */
+.video-container.playing .custom-play-btn {
+    display: none;
+}
