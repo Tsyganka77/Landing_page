@@ -245,55 +245,55 @@
     <div class="directions_carousel">
         <div class="direction_card" data-index="0">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Прикладная математика" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav3.png" alt="Прикладная математика" class="card_photo">
             </div>
             <p class="card_label">Прикладная математика<br>и информатика</p>
         </div>
 
         <div class="direction_card active" data-index="1">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Прикладная механика" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav5.png" alt="Прикладная механика" class="card_photo">
             </div>
             <p class="card_label">Прикладная механика</p>
         </div>
 
         <div class="direction_card" data-index="2">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Электроника" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav7.png" alt="Электроника" class="card_photo">
             </div>
             <p class="card_label">Электроника и автоматика<br>физических установок</p>
         </div>
 
         <div class="direction_card" data-index="3">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Экономика" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav6.png" alt="Экономика" class="card_photo">
             </div>
             <p class="card_label">Экономика</p>
         </div>
 
         <div class="direction_card" data-index="4">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Информатика" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav8.png" alt="Информатика" class="card_photo">
             </div>
             <p class="card_label">Информатика и вычислительная<br>техника</p>
         </div>
 
         <div class="direction_card" data-index="5">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Информационные системы" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav1.png" alt="Информационные системы" class="card_photo">
             </div>
             <p class="card_label">Информационные системы<br>и технологии</p>
         </div>
 
         <div class="direction_card" data-index="6">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Конструкторское обеспечение" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav2.png" alt="Конструкторское обеспечение" class="card_photo">
             </div>
 	    <p class="card_label">Конструкторско-технологическое<br>обеспечение машиностроительных<br>производств</p>
         </div>
 	<div class="direction_card" data-index="7">
             <div class="card_frame">
-                <img src="design/ммм сайт/photo1.jpg" alt="Конструкторское обеспечение" class="card_photo">
+                <img src="design/ммм сайт/screens/blok_directions/svg_files_for_directions/naprav4.png" alt="Конструкторское обеспечение" class="card_photo">
             </div>
             <p class="card_label">Прикладная математика и физика</p>
         </div>
@@ -366,9 +366,21 @@
     <!-- Окно просмотра карты -->
     <div class="map_viewport" id="map_viewport">
         <div class="map_container" id="map_container">
-            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg" alt="Карта территории СарФТИ" class="map_image" id="map_image">	
+            <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg" alt="Карта территории СарФТИ" class="map_image" id="map_image">
         </div>
+	<div class="map_marker" id="dorm1_marker" style="display: none;">
+                <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/mayakovskogo_2.svg" alt="ул. Маяковского, 2" class="marker_address_img1">
+                <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/oranzhevy_kruzhok.svg" alt="Маркер" class="marker_dot_img">
+            </div>
+
+
+            <div class="map_marker" id="dorm2_marker" style="display: none;">
+                <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/chkalova_57.svg" alt="ул. Заводская, 5" class="marker_address_img2">
+                <img src="design/ммм сайт/screens/blok_map/svg_files_for_map/oranzhevy_kruzhok.svg" alt="Маркер" class="marker_dot_img">
+            </div>
+
     </div>
+
 
     <!-- Кнопки навигации по корпусам (изображения) -->
     <div class="map_controls">
@@ -717,6 +729,118 @@
     </div>
 </div>
 </section>
+
+<!-- БЛОК 12: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+<section class="contact_form_section" id="contact">
+    <div class="contact_form_container">
+        <h2 class="contact_form_title">
+            Оставьте свой контакт,<br>
+            чтобы с вами связался представитель
+	    приемной комиссии<br> СарФТИ НИЯУ МИФИ
+        </h2>
+
+        <form class="contact_form" id="contactForm">
+            <div class="form_fields">
+                <div class="form_field">
+                    <input type="text" id="userName" name="userName" placeholder="Имя и Фамилия" required>
+                </div>
+
+                <div class="form_field">
+                    <input type="text" id="userContact" name="userContact" placeholder="E-mail или телефон" required>
+                </div>
+
+                <button type="submit" class="form_submit_btn">ОТПРАВИТЬ</button>
+            </div>
+
+            <p class="form_privacy">
+                Заполняя данную форму, вы соглашаетесь на обработку персональных данных
+            </p>
+        </form>
+    </div>
+</section>
+
+<!-- БЛОК 13: ФУТЕР -->
+<footer class="footer_section" id="footer">
+    <div class="footer_container">
+        
+        <!-- Верхняя часть -->
+        <div class="footer_top">
+            <!-- Левая колонка -->
+            <div class="footer_left">
+                <img src="design/ммм сайт/лого сарфти_белое.svg" alt="СарФТИ" class="footer_logo">
+                
+                <div class="footer_contacts">
+                    <div class="footer_contact_item">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/адрес.svg" alt="Адрес" class="footer_contact_icon">
+                        <span class="footer_contact_text">г. Саров, ул. Духова, 6</span>
+                    </div>
+                    
+                    <div class="footer_contact_item">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/номер телефона.svg" alt="Телефон" class="footer_contact_icon">
+                        <span class="footer_contact_text">+7 (910) 145-83-73</span>
+                    </div>
+                    
+                    <div class="footer_contact_item">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/почта.svg" alt="Почта" class="footer_contact_icon">
+                        <span class="footer_contact_text">priem@sarfti.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Правая колонка -->
+            <div class="footer_right">
+                <!-- Кнопка Наверх - КАРТИНКА -->
+		<a href="#" class="footer_to_top" id="toTopBtn">
+		    <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/кнопка наверх.svg" alt="Наверх" class="to_top_btn_img">
+		</a>
+                
+                <!-- Соцсети -->
+                <div class="footer_social">
+                    <a href="https://vk.com/sarfti" target="_blank" class="social_link">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/вк.svg" alt="VK" class="social_icon">
+                    </a>
+                    <a href="https://t.me/sarfti" target="_blank" class="social_link">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/тг.svg" alt="Telegram" class="social_icon">
+                    </a>
+                    <a href="https://wa.me/79101458373" target="_blank" class="social_link">
+                        <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/макс.svg" alt="Max" class="social_icon">
+                    </a>
+                </div>
+                
+                <!-- Навигация -->
+                <nav class="footer_nav">
+                    <div class="nav_row">
+                        <a href="#info" class="nav_link">О вузе</a>
+                        <a href="#stats" class="nav_link">Цифры</a>
+                        <a href="#leadership" class="nav_link">Руководство</a>
+                        <a href="#vk_groups" class="nav_link">Группы</a>
+                    </div>
+                    <div class="nav_row">
+                        <a href="#directions" class="nav_link">Направления</a>
+                        <a href="#roadmap" class="nav_link">Таймлайн</a>
+                        <a href="#map" class="nav_link">Карта</a>
+                        <a href="#video" class="nav_link">Видео</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        
+        <!-- Большая надпись САРФТИ -->
+        <div class="footer_big_text">
+            <img src="design/ммм сайт/screens/blok_futer/svg_files_for_futer/надпись сарфти.svg" alt="САРФТИ" class="sarfti_big">
+        </div>
+        
+        <!-- Нижняя часть -->
+        <div class="footer_bottom">
+            <div class="footer_copyright">
+                © 2026 СарФТИ НИЯУ МИФИ - филиал Национального исследовательского ядерного университета «МИФИ»<br>
+                Создано студентами Маркиным Артёмом и Цыгановым Максимом | 2026
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
 
 <script src="code.js"></script>
 

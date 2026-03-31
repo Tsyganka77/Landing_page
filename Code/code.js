@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         building3: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
         building4: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
         building5: 'design/ммм сайт/screens/blok_map/svg_files_for_map/карта.svg',
-        dorm1: 'design/ммм сайт/map/dorm1_map.png',
-        dorm2: 'design/ммм сайт/map/dorm2_map.png'
+        dorm1: 'design/ммм сайт/screens/blok_map/svg_files_for_map/obschaga_1.svg',
+        dorm2: 'design/ммм сайт/screens/blok_map/svg_files_for_map/obschaga_2.svg'
     };
     
     // Позиции для каждого корпуса
@@ -52,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
         building3: { x: 15, y: -480, scale: 0.95 },
         building4: { x: 0, y: -170, scale: 1 },
         building5: { x: 0, y: 20, scale: 1 },
-        dorm1: { x: -300, y: -400, scale: 1 },
-        dorm2: { x: 100, y: -500, scale: 1 }
+        dorm1: { x: 0, y: -155, scale: 0.8 },
+        dorm2: { x: 0, y: 80, scale: 0.9 }
     };
     
     // Корпуса для которых НУЖЕН сдвиг вниз при раскрытии
-    const buildingsWithOffset = ['building1', 'building2', 'building3', 'building4'];
+    const buildingsWithOffset = ['building1', 'building2', 'building3', 'building4', 'dorm1', 'dorm2'];
     
     // Drag & Drop
     viewport.addEventListener('mousedown', (e) => {
@@ -105,6 +105,21 @@ buttons.forEach(btn => {
         if (buildingMaps[currentBuilding]) {
             mapImage.src = buildingMaps[currentBuilding];
         }
+
+	const dorm1Marker = document.getElementById('dorm1_marker');
+        const dorm2Marker = document.getElementById('dorm2_marker');
+        
+        if (dorm1Marker && dorm2Marker) {
+            dorm1Marker.style.display = 'none';
+            dorm2Marker.style.display = 'none';
+            
+            if (currentBuilding === 'dorm1') {
+                dorm1Marker.style.display = 'block';
+            } else if (currentBuilding === 'dorm2') {
+                dorm2Marker.style.display = 'block';
+            }
+        }
+        
         
         // ← ИСПРАВЛЕНО: Не сбрасываем для корпусов, только для общежитий
         const pos = buildingPositions[currentBuilding];
@@ -430,4 +445,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
     observer.observe(section);
+});
+
+// Форма обратной связи - Formspree
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                userName: document.getElementById('userName').value,
+                userContact: document.getElementById('userContact').value,
+                to_email: 'interlet37@gmail.com'
+            };
+
+            // Отправка через Formspree
+            try {
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+                    contactForm.reset();
+                } else {
+                    alert('Произошла ошибка. Попробуйте позже.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Произошла ошибка. Попробуйте позже.');
+            }
+        });
+    }
+});
+
+// Кнопка "Наверх"
+document.addEventListener('DOMContentLoaded', () => {
+    const toTopBtn = document.getElementById('toTopBtn');
+
+    if (toTopBtn) {
+        toTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

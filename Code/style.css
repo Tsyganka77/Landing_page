@@ -34,7 +34,7 @@ a, button, .header_button, .header_button img {
 }
 
 html, body {
-    overflow-x: hidden;  /* ← БЛОКИРУЕТ горизонтальный скролл страницы */
+    overflow-x: hidden;
     width: 100%;
 }
 
@@ -252,7 +252,7 @@ body {
 .info_badge_wrapper {
     display: inline-block;
     position: relative;
-    vertical-align: middle; /* Выравнивание по центру строки */
+    vertical-align: middle;
 }
 
 .badge_frame_img{
@@ -414,9 +414,7 @@ body {
     transition: color 0.3s ease;
 }
 
-/* ======================================== */
 /* БЛОК 5: АТОМЫ */
-/* ======================================== */
 
 .atoms_section {
     background-color: #0040ff;
@@ -426,7 +424,6 @@ body {
     min-height: 60vh;
 }
 
-/* Маленькие атомы (фон) */
 .atoms_background {
     position: absolute;
     top: 0;
@@ -445,7 +442,6 @@ body {
     animation: rotate-atom-reverse 40s linear infinite;
 }
 
-/* Позиции маленьких атомов */
 .sa_1 { top: 10%; left: -4%; }
 .sa_2 { top: 10%; left: 96%; }
 .sa_3 { top: 70%; left: -4%; }
@@ -455,7 +451,6 @@ body {
 .sa_7 { top: 10%; left: 31%; }
 .sa_8 { top: 70%; left: 96%; }
 
-/* Большие атомы */
 .atoms_container {
     display: flex;
     justify-content: center;
@@ -473,21 +468,17 @@ body {
     flex-shrink: 0;
 }
 
-/* Вращение больших атомов (по часовой) */
 @keyframes rotate-atom {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Вращение маленьких атомов (против часовой) */
 @keyframes rotate-atom-reverse {
     0% { transform: rotate(360deg); }
     100% { transform: rotate(0deg); }
 }
 
-/* ======================================== */
 /* БЛОК 4: РУКОВОДСТВО */
-/* ======================================== */
 
 .leadership_section {
     background-color: #0040ff;
@@ -526,7 +517,6 @@ body {
     padding: 5vh 3vw 5vh 3vw;
 }
 
-/* Фоновый атом (ОДНО изображение) */
 .leadership_atom_fixed {
     position: absolute;
     top: 58%;
@@ -540,7 +530,6 @@ body {
     will-change: transform;
 }
 
-/* Контент карточки */
 .card_content {
     display: flex;
     align-items: center;
@@ -601,9 +590,7 @@ body {
     margin: 0;
 }
 
-/* ======================================== */
 /* БЛОК 6: НАПРАВЛЕНИЯ */
-/* ======================================== */
 
 .directions_section {
     background-color: #f2eeff;
@@ -622,7 +609,6 @@ body {
     letter-spacing: 3px;
 }
 
-/* Карусель карточек */
 .directions_carousel {
     display: flex;
     gap: 1vw;
@@ -692,7 +678,6 @@ body {
     min-height: 3vh;
 }
 
-/* Детальная информация */
 .direction_details {
     margin: 0vh 14.5vw 0 14.5vw; 
 }
@@ -811,9 +796,7 @@ body {
     display: block;
 }
 
-/* ======================================== */
 /* БЛОК 7: ДОРОЖНАЯ КАРТА */
-/* ======================================== */
 
 .roadmap_section {
     background-color: #0040ff;
@@ -824,7 +807,6 @@ body {
     min-height: 120vh;
 }
 
-/* Горизонтальные линии */
 .roadmap_line_sep {
     position: absolute;
     left: 0;
@@ -833,32 +815,26 @@ body {
     background: rgba(242, 238, 255, 0.3);
 }
 
-/* Позиции линий */
 .roadmap_line_sep:nth-child(1) { top: 20vh; }
 .roadmap_line_sep:nth-child(2) { top: 40vh; }
 .roadmap_line_sep:nth-child(3) { top: 60vh; }
 .roadmap_line_sep:nth-child(4) { top: 80vh; }
 .roadmap_line_sep:nth-child(5) { top: 100vh; }
 
-/* Большие заголовки этапов */
-
 .roadmap_stage {
     position: absolute;
     height: auto;
-    max-height: 10vh;  /* Ограничение высоты */
+    max-height: 10vh;
     object-fit: contain;
     background-color: #0040ff;
 }
 
-/* Позиции заголовков-картинок */
 #stage_1 { top: 14.5vh; left: 14.5vw; max-width: 20vw; }
 #stage_2 { top: 34.6vh; right: 14.5vw; max-width: 20vw; }
 #stage_3 { top: 56.5vh; left: 14.5vw; max-width: 25vw; }
 #stage_4 { top: 75vh; right: 14.5vw; max-width: 20vw; }
 #stage_5 { top: 96vh; left: 14.5vw; max-width: 20vw; }
 
-
-/* Маленькие описания */
 .roadmap_desc {
     position: absolute;
     font-family: 'coolvetica rg', sans-serif;
@@ -868,7 +844,6 @@ body {
     max-width: 30vw;
 }
 
-/* Позиции описаний */
 #desc_1 { top: 11vh; right: 14.5vw; text-align: right; }
 #desc_2 { top: 31vh; left: 14.5vw; text-align: left; }
 #desc_3 { top: 51vh; right: 14.5vw; text-align: right; }
@@ -891,9 +866,7 @@ body {
     object-fit: cover;
 }
 
-/* ======================================== */
 /* БЛОК 9: КАРТА ТЕРРИТОРИИ */
-/* ======================================== */
 
 .map_section {
     background-color: #f2eeff;
@@ -916,7 +889,6 @@ body {
     font-weight: 400;
 }
 
-/* Обычное окно карты */
 .map_viewport {
     width: 100%;
     height: 60vh;
@@ -930,46 +902,106 @@ body {
     transition: height 0.5s ease;
 }
 
-/* Увеличенное окно карты */
 .map_viewport.expanded {
-    height: 95vh;  /* Увеличиваем на 35vh */
+    height: 95vh;
     transition: height 0.5s ease;
 }
 
-/* Контейнер карты */
 .map_container {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
-    top: 0;  /* ← Добавь это */
+    top: 0;
     left: 0;
     transform-origin: center center;
     transition: transform 0.5s ease;
 }
 
-/* Сдвигаем карту вниз когда окно раскрыто */
+.map_marker {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Синий адрес - картинка */
+.marker_address_img1 {
+    position: absolute;
+    top: -25vh;
+    left: 80%;
+    transform: translateX(130%);
+    width: auto;
+    height: 6vh;
+    max-height: 50px;
+}
+
+.marker_address_img2 {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(80%);
+    width: auto;
+    height: 6vh;
+    max-height: 50px;
+}
+
+
+/* Оранжевый маркер - картинка */
+.marker_dot_img {
+    width: 3vh;
+    height: 3vh;
+    max-width: 25px;
+    max-height: 25px;
+}
+
+#dorm1_marker {
+    top: 72%;
+    left: 29.5%;
+}
+
+#dorm2_marker {
+    top: 72%;
+    left: 46%;
+}
+
+.map_viewport.expanded.dorm1 .map_marker {
+    transform: translateY(3.6vh);
+}
+
+.map_viewport.expanded.dorm2 .map_marker {
+    transform: translateY(-3.3vh);
+}
+
+
 .map_viewport.expanded.building1 .map_container {
-    top: 35vh;  /* Сдвигаем вниз на 35vh */
+    top: 35vh;
     transition: top 0.5s ease;
 }
 
 .map_viewport.expanded.building2 .map_container {
-    top: 35vh;  /* Сдвигаем вниз на 35vh */
+    top: 35vh;
     transition: top 0.5s ease;
 }
 
 .map_viewport.expanded.building3 .map_container {
-    top: 35vh;  /* Сдвигаем вниз на 35vh */
+    top: 35vh;
     transition: top 0.5s ease;
 }
 
 .map_viewport.expanded.building4 .map_container {
-    top: 35vh;  /* Сдвигаем вниз на 35vh */
+    top: 35vh;
     transition: top 0.5s ease;
 }
 
 .map_viewport.expanded.building5 .map_container {
-    top: 0;  /* Остаётся на месте */
+    top: 0;
+}
+
+.map_viewport.expanded.dorm1 .map_container {
+    top: 25vh;
+}
+
+.map_viewport.expanded.dorm2 .map_container { 
+    top: 20vh; 
 }
 
 .map_image {
@@ -979,7 +1011,6 @@ body {
     display: block;
 }
 
-/* Кнопки управления (изображения) */
 .map_controls {
     margin-top: 3vh;
     display: flex;
@@ -1002,7 +1033,6 @@ body {
     opacity: 1;
 }
 
-/* Кнопки навигации (изображения) */
 .map_navigation {
     position: absolute;
     bottom: 28vh;
@@ -1026,9 +1056,7 @@ body {
     transform: scale(1.1);
 }
 
-/* ======================================== */
 /* БЛОК 10: ГРУППЫ В ВК */
-/* ======================================== */
 
 .vk_groups_section {
     background-color: #f2eeff;
@@ -1045,20 +1073,18 @@ body {
     letter-spacing: 2px;
 }
 
-/* Контейнер */
+
 .vk_groups_container {
     position: relative;
     width: 100%;
-    min-height: 145vh;  /* Под 23 карточки */
-}
+    min-height: 145vh;}
 
-/* Базовые стили карточки */
 .vk_group_card {
     position: absolute;
     text-decoration: none;
-    width: var(--card-width, 30%);  /* ← Контроль ширины */
-    top: var(--card-top, 0);         /* ← Контроль позиции top */
-    left: var(--card-left, 0);       /* ← Контроль позиции left */
+    width: var(--card-width, 30%);
+    top: var(--card-top, 0);
+    left: var(--card-left, 0);
 }
 
 .vk_card_inner {
@@ -1074,7 +1100,6 @@ body {
     min-height: 14vh;
 }
 
-/* Аватарка */
 .vk_group_avatar {
     width: 8vh;
     height: 8vh;
@@ -1083,7 +1108,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Контент */
 .vk_card_content {
     flex: 1;
 }
@@ -1109,7 +1133,6 @@ body {
     opacity: 0.7;
 }
 
-/* Иконка ВК */
 .vk_icon {
     width: 3vh;
     height: 3vh;
@@ -1122,7 +1145,6 @@ body {
     display: none;
 }
 
-/* Эффект при наведении */
 .vk_group_card:hover .vk_card_inner {
     background-color: #0040ff;
 }
@@ -1140,10 +1162,7 @@ body {
     display: block;
 }
 
-
-/* ======================================== */
 /* БЛОК 11: ВИДЕО О САРФТИ */
-/* ======================================== */
 
 .video_section {
     background-color: #f2eeff;
@@ -1190,7 +1209,262 @@ body {
     transition: transform 0.3s;
 }
 
-/* Скрыть кнопку после клика */
 .video-container.playing .custom-play-btn {
     display: none;
+}
+
+/* БЛОК 12: ФОРМА ОБРАТНОЙ СВЯЗИ */
+
+.contact_form_section {
+    background-color: #f2eeff;
+    padding: 15vh 5vw;
+    position: relative;
+}
+
+.contact_form_container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact_form_title {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 2.2vw;
+    color: #0040ff;
+    text-align: center;
+    margin-bottom: 5vh;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_fields {
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+    align-items: stretch;
+}
+
+.form_field {
+    flex: 1;
+}
+
+.form_field input {
+    width: 100%;
+    padding: 2.5vh 2vw;
+    border: 2px solid #0040ff;
+    border-radius: 2vh;
+    background: transparent;
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.1vw;
+    color: #0040ff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form_field input::placeholder {
+    color: #0040ff;
+}
+
+.form_field input:focus {
+    background: rgba(0, 64, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 64, 255, 0.2);
+}
+
+.form_submit_btn {
+    padding: 2.5vh 4vw;
+    background: #0040ff;
+    color: #fff;
+    border: none;
+    border-radius: 5vh;
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.1vw;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.form_submit_btn:hover {
+    background: #0033cc;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 64, 255, 0.3);
+}
+
+.form_privacy {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.2vw;
+    color: #0040ff;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+/* БЛОК 13: ФУТЕР */
+
+.footer_section {
+    background-color: #0040ff;
+    padding: 5vh 0vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer_container {
+    max-width: 100%;
+}
+
+/* Верхняя часть */
+.footer_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5vh;
+    gap: 5vw;
+    padding-left: 12vw;
+    padding-right: 12vw;
+}
+
+/* Левая колонка */
+.footer_left {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.footer_logo {
+    width: 15vw;
+    max-width: 200px;
+    height: auto;
+}
+
+.footer_contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.footer_contact_item {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.footer_contact_icon {
+    width: 3vh;
+    height: 3vh;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.footer_contact_text {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.1vw;
+    color: #fff;
+}
+
+/* Правая колонка */
+.footer_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3vh;
+}
+
+.footer_to_top {
+    display: block;
+    width: auto;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.to_top_btn_img {
+    width: auto;
+    height: 7vh;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+
+.to_top_icon {
+    padding-right: 12vw;
+    width: 2vh;
+    height: 2vh;
+}
+
+/* Соцсети */
+.footer_social {
+    display: flex;
+    gap: 0.7vw;
+}
+
+.social_link {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.social_icon {
+    width: 3vh;
+    height: 3vh;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.social_link:hover {
+    transform: scale(1.1);
+}
+
+/* Навигация */
+.footer_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.nav_row {
+    display: flex;
+    gap: 2vw;
+}
+
+.nav_link {
+    font-family: 'coolvetica rg', sans-serif;
+    font-size: 1.4vw;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav_link:hover {
+    opacity: 0.7;
+}
+
+/* Большая надпись САРФТИ */
+.footer_big_text {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.sarfti_big {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Нижняя часть */
+.footer_bottom {
+    font-family: 'coolvetica rg', 'sans-serif';
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 0 2vh 16vw;
+    color: #fff;
+    font-size: 1.5vw;
 }
